@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset=utf-8 />
+<title>BMI Calculator (Vanilla JS)</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script src="js/bmi-vanilla.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+
+<section id="section1">
+    <div class="calculator-container">
+        <h1>BMI</h1>
+        <p>Calculator</p>
+        <form id="bmi">
+        <label>Enter your weight:</label>
+        <input type="text" name="weight" placeholder="Weight (lbs)" oninput="javascript:calcBMI()" />
+        <label>Enter your height:</label>
+        <input type="text" name="height" placeholder="Height (inches)" oninput="javascript:calcBMI()" />
+        <!--<br /> 
+        <a href="#" onClick="javascript:calcBMI()" class="button">Calculate Your BMI</a>-->
+    </div>
+</section>
+    
+<section id="section2">
+    
+    <div class="calculator-container">
+        <p id="bmidescription" class="bmidescription">Based on your weight of <span id="yourweight"></span> pounds and height of <span id="yourheight"></span> inches, your BMI is: <span id="bmiresult" class="bmiresult"></span><span id="bmihealth" class="bmihealth"></span></p>
+    </div>
+</section>
+    
+</form>
+
+</body>
+</html>

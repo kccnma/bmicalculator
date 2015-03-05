@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.5em;
+    color: #333;
+    text-align: center;
+}
+
+section {
+    padding: 1em;
+}
+
+#section1 {
+    background-color: #efefef;
+}
+
+.calculator-container {
+    padding: 1em;
+    display: inline-block;
+    margin: 1em auto;
+    /*background-color: rgba(0,0,0,.1);*/
+    border-radius: 1em;
+}
+
+h1 {
+    font-size: 4em;
+    margin: .5em 0 0 0;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+h1+p {
+    font-size: .85em;
+    margin: .75em 0 1em 0;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+input {
+    font-size: 1.25em;
+    margin: 0 auto .5em auto;
+    padding: .5em;
+}
+
+.button {
+    font-size: 1.25em;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    background: #666;
+    border: 1px solid #666;
+    padding: .75em .5em .65em .5em;
+    margin: .5em auto;
+}
+
+.button:hover {
+    color: #fff;
+    background: #333;
+}
+
+.bmidescription {
+    /*font-size: .8em;
+    line-height: 1.25em;*/
+    color: #888;
+    margin: .25em auto;
+    max-width: 20em;
+}
+
+#bmidescription {
+    display: none;
+}
+
+#bmidescription.show {
+    display: block;
+}
+
+.bmiresult {
+    display: block;
+    font-size: 6em;
+    color: #f96;
+    margin: .5em .25em;
+    font-weight: bold;
+}
+
+.bmihealth {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: #000;
+    margin: .5em .25em;
+}
