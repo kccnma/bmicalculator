@@ -2,37 +2,143 @@
 <html ng-app>
 <head>
 <meta charset=utf-8 />
-<title>BMI Calculator (Vanilla JS)</title>
+<title>BMI Calculator</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <script src="js/bmi-vanilla.js"></script>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+    
+<header class="group">
+	<div class="container">
+	
+		<div class="logo">
+			<h1><a href="#calculator">BMI Calculator</a></h1>
+		</div>
+	
+		<nav id="mainnav">
+   			<div id="menu">&#x2261;<span> Menu</span></div>
+			<ul class="nav">
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	
+	</div>
+</header>
 
 
-<section id="section1">
-    <div class="calculator-container">
-        <h1>BMI</h1>
-        <p>Calculator</p>
-        <form id="bmi">
-        <label>Enter your weight:</label>
-        <input type="text" name="weight" placeholder="Weight (lbs)" oninput="javascript:calcBMI()" />
-        <label>Enter your height:</label>
-        <input type="text" name="height" placeholder="Height (inches)" oninput="javascript:calcBMI()" />
-        <!--<br /> 
-        <a href="#" onClick="javascript:calcBMI()" class="button">Calculate Your BMI</a>-->
+<div id="splash" class="fpage fade-out">
+    <div class="fcontainer">
+        <div class="logo scale-in-out">
+            <h1>BMI</h1>
+            <p>Calculator</p>
+        </div>
     </div>
-</section>
-    
-<section id="section2">
-    
-    <div class="calculator-container">
-        <p id="bmidescription" class="bmidescription">Based on your weight of <span id="yourweight"></span> pounds and height of <span id="yourheight"></span> inches, your BMI is: <span id="bmiresult" class="bmiresult"></span><span id="bmihealth" class="bmihealth"></span></p>
+</div>
+
+<div id="calculator" class="fpage">
+    <div class="fcontainer">
+        <div class="calculator-container">
+        
+            <h1>BMI</h1>
+            <p>Calculator</p>
+            <form id="bmi">
+                <label>Enter your weight:</label>
+                <input type="text" name="weight" placeholder="Weight (lbs)" oninput="javascript:calcBMI()" />
+                <label>Enter your height:</label>
+                <input type="text" name="height" placeholder="Height (inches)" oninput="javascript:calcBMI()" />
+                <br />
+                <a href="#" onClick="javascript:calcBMI()" class="button">Calculate Your BMI</a>
+            </form>
+            <p id="bmidescription" class="bmidescription">Based on your weight of <span id="yourweight"></span> pounds and height of <span id="yourheight"></span> inches, your BMI is: <span id="bmiresult" class="bmiresult"></span><span id="bmihealth" class="bmihealth"></span></p>
+                
+        </div>
     </div>
-</section>
+</div>
+
+
+<div id="about" class="fpage">
+    <div class="fcontainer">
+        <div class="calculator-container">
+        
+            <h2>About</h2>
+            <p>BMI Calculator</p>
+                
+        </div>
+    </div>
+</div>
+
+
+<div id="contact" class="fpage">
+    <div class="fcontainer">
+        <div class="calculator-container">
+        
+            <h2>Contact</h2>
+            <p>BMI Calculator</p>
+                
+        </div>
+    </div>
+</div>
+
+
+<footer>
+	<div class="container">
+	
+		<nav id="footernav">
+			<ul class="nav">
+				<li><a href="#calculator">Calculator</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+</footer>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
     
-</form>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+			
+		// JQUERY ANIMATE TO ANCHOR WITH EASING
+		$('.logo a, a.anchor, #footernav a').bind('click',function(event){
+			var $anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $($anchor.attr('href')).offset().top
+			}, 1500,'easeInOutExpo'); 
+			event.preventDefault();
+		});
+		$('#mainnav a').bind('click',function(event){
+			var $anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $($anchor.attr('href')).offset().top
+			}, 1500,'easeInOutExpo');
+            var w = $(window).width();  
+            if(w < 768) {  
+                $('#mainnav ul').slideToggle();
+            }  
+			event.preventDefault();
+		});
+		
+		// JQUERY NAV TOGGLE
+		$('#menu').bind('click',function(event){
+		  $('#mainnav ul').slideToggle();
+		});
+		
+		$(window).resize(function(){  
+		  var w = $(window).width();  
+		  if(w > 768) {  
+			  $('#mainnav ul').removeAttr('style');  
+		  }  
+		});
+	  
+	});
+	
+</script>
+    
 
 </body>
 </html>
