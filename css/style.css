@@ -514,6 +514,25 @@ footer a:focus  {
     color: #fff;
 }
 
+#splash .logo p {
+    margin-bottom: 0;
+}
+
+#splash .logo a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+#splash.hidden {
+    display: none;
+}
+
 @-webkit-keyframes fade-out {
     0%   {opacity: 1;}
     95%  {opacity: 1; -webkit-transform: scale(1);}
