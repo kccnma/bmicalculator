@@ -25,7 +25,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body id="top">
     
 <header class="group">
 	<div class="container">
@@ -46,12 +46,12 @@
 </header>
 
 
-<div id="splash" class="fpage fade-out">
+<div id="splash" class="fpage">
     <div class="fcontainer">
-        <div class="logo scale-in-out">
+        <div class="logo scaler">
             <h1>BMI</h1>
             <p>Calculator</p>
-            <a href="#calculator">Launch</a>
+            <a href="#top">Launch</a>
         </div>
     </div>
 </div>
@@ -154,10 +154,17 @@
 		});
 		
 		// SPLASH EXIT
-		$('#splash a').bind('click',function(event){
-		  $('#splash').addClass('hidden');
+		$('#splash').bind('click',function(event){
+		  //$('#splash').addClass('hidden');
+            $('#splash').hide();
+            $('footer').show();
+            $('header').show();
 		});
-	  
+        
+        setTimeout( "$('#splash').hide();",2000 );
+        setTimeout( "$('header').show();",2000 );
+        setTimeout( "$('footer').show();",2000 );
+	    
 	});
 	
 </script>
